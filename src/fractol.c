@@ -6,7 +6,7 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 14:42:10 by ssabbah           #+#    #+#             */
-/*   Updated: 2018/02/15 19:20:36 by ssabbah          ###   ########.fr       */
+/*   Updated: 2018/02/15 19:37:55 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int mandelbrot_set(int c_re, int c_im)
 	z_im = c_im;
 	
 	n = 0;
-	printf("rand %d\n", rand() );
 	while (n < 50)
 	{
 		if (pow(z_re, 2) + pow(z_im, 2) > 4)
