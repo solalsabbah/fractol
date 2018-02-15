@@ -6,13 +6,14 @@
 #    By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/14 14:33:53 by ssabbah           #+#    #+#              #
-#    Updated: 2018/02/14 15:41:17 by ssabbah          ###   ########.fr        #
+#    Updated: 2018/02/15 12:03:25 by ssabbah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 
-SRC_FILES = fractol.c
+SRC_FILES = fractol.c\
+			ft_events.c\
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
