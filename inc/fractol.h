@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <math.h>
-# include <mlx.h>
+# include "../minilibx/mlx.h"
 # include <stdlib.h>
 
 # define WIDTH	1500

@@ -12,8 +12,8 @@
 
 NAME = fractol
 
-SRC_FILES = fractol.c\
-			ft_events.c\
+SRC_FILES =	 fractol.c\
+		ft_events.c\
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
@@ -27,10 +27,10 @@ INC_DIR = inc
 INCLUDES = -I $(INC_DIR)
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra
 
 LIBFT = -L./libft -lft
-FTPRINTF = -L ./ft_printf
+#FTPRINTF = -L ./ft_printf
 MLX = -L./minilibx -lmlx -framework OpenGL -framework Appkit
 
 all: $(NAME)
@@ -39,18 +39,16 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ make -C libft/
 	@ make -C minilibx
-	@ make -C ft_printf/
-	@ $(CC) $(FLAGS) $(FTPRINTF) $(LIBFT) $(MLX) $^ -o $@
+	@ $(CC) $(FLAGS)  $(LIBFT) $(MLX) $^ -o $@
 	@ echo "\033[32mCompilation done : FRACTOL is ready to be used\033[0m"
 
 $(OBJ_PATH)%.o:$(SRC_PATH)%.c
 	@ mkdir -p $(OBJ_PATH)
 	@ $(CC) $(FLAGS) $(INCLUDES) -o $@ -c $<
 
-clean:
+clean:	
 	@ make -C libft clean
 	@ make -C minilibx clean
-	@ make -C ft_printf clean
 	@ rm -rf $(OBJ)
 	@ rm -rf $(OBJ_PATH)
 	@ echo "\033[32mCleaning obj\033[0m"
@@ -58,7 +56,6 @@ clean:
 fclean: clean
 	@ make -C libft fclean
 	@ make -C minilibx fclean
-	@ make -C ft_printf fclean
 	@ rm -f $(NAME)
 	@ echo "\033[32mCleaning FRACTOL\033[0m"
 

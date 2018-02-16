@@ -85,6 +85,7 @@ int main(int ac, char **av)
 	p.win = mlx_new_window(p.mlx, WIDTH, HEIGHT, "fractol");
 	p.image_ptr = mlx_new_image(p.mlx, WIDTH, HEIGHT);
 	p.image = (int *)mlx_get_data_addr(p.image_ptr,&p.bpp, &p.size_l, &p.endian);
+	printf("%d\n", p.image[0]);
 	mandelbrot(&p);
 	mlx_put_image_to_window(p.mlx, p.win, p.image_ptr, 0, 0);
 	mlx_hook(p.win, 2, 3, ft_key, &p);
