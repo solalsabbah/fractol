@@ -12,8 +12,10 @@
 
 NAME = fractol
 
-SRC_FILES =	 fractol.c\
+SRC_FILES =	fractol.c\
 		ft_events.c\
+		set_menu.c\
+		mandelbrot.c\
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
