@@ -50,6 +50,7 @@ typedef struct	s_param
 	void		*logo_xpm;
 	void		*zoom_xpm;
 	void		*help_xpm;
+	void		*color_xpm;
 	void		*school_xpm;
 }			t_param;
 
