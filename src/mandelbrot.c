@@ -4,7 +4,7 @@ int mandelbrot_set(int c_re, int c_im)
 {
 	int z_re;
 	int z_im;
-
+	int tmp;
 	int n;
 
 	z_re = c_re;
@@ -15,8 +15,9 @@ int mandelbrot_set(int c_re, int c_im)
 	{
 		if (pow(z_re, 2) + pow(z_im, 2) > 4)
 			return (0);
+		tmp = z_im;
 		z_im = 2 * z_re * z_im + c_im;
-		z_re = z_re * z_re - (z_im * z_im) + c_re;
+		z_re = z_re * z_re - (tmp * tmp) + c_re;
 		n++;
 	}
 	return (1);
@@ -24,16 +25,16 @@ int mandelbrot_set(int c_re, int c_im)
 
 int	mandelbrot(t_param *p)
 {
-	float minRe;
-	float maxRe;
-	float minIm;
-	float maxIm;
+	double minRe;
+	double maxRe;
+	double minIm;
+	double maxIm;
 
-	float c_re;
-	float c_im;
+	double c_re;
+	double c_im;
 
-	float k_re;
-	float k_im;
+	double k_re;
+	double k_im;
 
 	int y;
 	int x;

@@ -18,7 +18,7 @@ int main(int ac, char **av)
 	if (ac != 0)
 		printf("%s\n", av[1]);
 	p.mlx = mlx_init();
-	p.win = mlx_new_window(p.mlx, WIDTH, HEIGHT, "fractol");
+	p.win = mlx_new_window(p.mlx, WIDTH, HEIGHT, "Fractol by ssabbah");
 	p.image_ptr = mlx_new_image(p.mlx, WIDTH, HEIGHT);
 	p.image = (int *)mlx_get_data_addr(p.image_ptr,&p.bpp, &p.size_l, &p.endian);
 	set_menu(&p);
