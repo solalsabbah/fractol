@@ -6,7 +6,7 @@
 #    By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/14 14:33:53 by ssabbah           #+#    #+#              #
-#    Updated: 2018/02/26 12:29:36 by ssabbah          ###   ########.fr        #
+#    Updated: 2018/02/26 14:49:00 by ssabbah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRC_FILES =	fractol.c\
 		ft_events.c\
 		set_menu.c\
 		mandelbrot.c\
+		julia.c\
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 

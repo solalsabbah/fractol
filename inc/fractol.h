@@ -6,7 +6,7 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 14:44:00 by ssabbah           #+#    #+#             */
-/*   Updated: 2018/02/26 13:45:56 by ssabbah          ###   ########.fr       */
+/*   Updated: 2018/02/26 14:48:31 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 
 # include <stdio.h>
+# include "../libft/libft.h"
 # include <math.h>
 # include <mlx.h>
 # include <stdlib.h>
@@ -58,6 +59,7 @@ typedef struct	s_param
 int				ft_printf(char *format, ...);
 int				ft_key(int keycode, t_param *p);
 int				mandelbrot(t_param *p);
-void				set_menu(t_param *p);
+int				julia(t_param *p);
+void			set_menu(t_param *p);
 
 #endif
