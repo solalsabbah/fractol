@@ -6,7 +6,7 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 14:44:00 by ssabbah           #+#    #+#             */
-/*   Updated: 2018/02/15 12:05:51 by ssabbah          ###   ########.fr       */
+/*   Updated: 2018/02/26 13:45:56 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 # include <stdio.h>
 # include <math.h>
-# include "../minilibx/mlx.h"
+# include <mlx.h>
 # include <stdlib.h>
 
 # define WIDTH	1500
 # define HEIGHT	1000
 
 # define BLUE 	0x72CAFF
+# define RED	0xB50000
 # define GREEN 	0x47D600
 # define BROWN	0x752E00
 # define WHITE 	0xFFFFFF

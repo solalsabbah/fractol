@@ -1,10 +1,10 @@
 #include "fractol.h"
 
-int mandelbrot_set(int c_re, int c_im)
+int mandelbrot_set(double c_re, double c_im)
 {
-	int z_re;
-	int z_im;
-	int tmp;
+	double z_re;
+	double z_im;
+	double tmp;
 	int n;
 
 	z_re = c_re;
@@ -14,13 +14,13 @@ int mandelbrot_set(int c_re, int c_im)
 	while (n < 50)
 	{
 		if (pow(z_re, 2) + pow(z_im, 2) > 4)
-			return (0);
+			return (n);
 		tmp = z_im;
 		z_im = 2 * z_re * z_im + c_im;
 		z_re = z_re * z_re - (tmp * tmp) + c_re;
 		n++;
 	}
-	return (1);
+	return (-1);
 }
 
 int	mandelbrot(t_param *p)
@@ -38,27 +38,28 @@ int	mandelbrot(t_param *p)
 
 	int y;
 	int x;
-	minRe = -2;
-	maxRe = 1;
-	minIm = -1.2;
-	maxIm = minIm + (maxRe - minRe) * HEIGHT / WIDTH;
+	int n;
+	minRe = -10;
+	maxRe = 10;
+	minIm = -5;
+	maxIm = minIm + ((maxRe - minRe) * HEIGHT) / WIDTH;
 
-	k_re = (maxRe - minRe) / (WIDTH  - 1);
-	k_im = (maxIm - minIm) / (HEIGHT - 1);
+	k_re = (maxRe - minRe) / WIDTH;
+	k_im = (maxIm - minIm) / HEIGHT;
 
-	y = 1;
-	while (y < HEIGHT)
+	y = 0;
+	while (++y < HEIGHT)
 	{
 		c_im = maxIm - y * k_im;
-		x = 1;
-		while (x < WIDTH)
+		x = 0;
+		while (++x < WIDTH)
 		{
 			c_re = minRe + x * k_re;
-			if (mandelbrot_set(c_re, c_im) == 1)
+			if ((n = mandelbrot_set(c_re, c_im)) == -1)
 				p->image[x + y * WIDTH] = WHITE;
-			x++;
+			else if (n != 0)
+				p->image[x + y * WIDTH] = BLACK + n * 10;
 		}
-		y++;
 	}
 	return (0);
 }
