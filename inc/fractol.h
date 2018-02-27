@@ -6,7 +6,7 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 14:44:00 by ssabbah           #+#    #+#             */
-/*   Updated: 2018/02/26 14:48:31 by ssabbah          ###   ########.fr       */
+/*   Updated: 2018/02/27 17:08:35 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <mlx.h>
 # include <stdlib.h>
 
-# define WIDTH	1500
-# define HEIGHT	1000
+# define WIDTH	2000
+# define HEIGHT	1100
 
 # define BLUE 	0x72CAFF
 # define RED	0xB50000
@@ -43,11 +43,14 @@ typedef struct	s_param
 	void		*win;
 	void		*image_ptr;
 	void		*menu_ptr;
-	int		*image;
-	int		*menu_data;
-	int		bpp;
-	int		size_l;
-	int		endian;
+	int			*image;
+	int			*menu_data;
+	int			bpp;
+	int			size_l;
+	int			endian;
+	int			map;	
+	double		zoomx;
+	double		zoomy;
 
 	void		*logo_xpm;
 	void		*zoom_xpm;
@@ -57,7 +60,9 @@ typedef struct	s_param
 }			t_param;
 
 int				ft_printf(char *format, ...);
+void 			launch_map(t_param *p);
 int				ft_key(int keycode, t_param *p);
+int				mouse_hook(int bouton, int x, int y, t_param *p);
 int				mandelbrot(t_param *p);
 int				julia(t_param *p);
 void			set_menu(t_param *p);
