@@ -6,7 +6,7 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 14:42:10 by ssabbah           #+#    #+#             */
-/*   Updated: 2018/02/27 17:28:50 by ssabbah          ###   ########.fr       */
+/*   Updated: 2018/02/27 17:37:45 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void 	launch_map(t_param *p)
 {
+	p->image_ptr = mlx_new_image(p->mlx, WIDTH, HEIGHT);
+	p->image = (int *)mlx_get_data_addr(p->image_ptr,&p->bpp, &p->size_l, &p->endian);
 	if (p->map == 1)
 		mandelbrot(p);
 	if (p->map == 2)
@@ -42,8 +44,6 @@ int		main(int ac, char **av)
 	t_param p;
 	p.mlx = mlx_init();
 	p.win = mlx_new_window(p.mlx, WIDTH, HEIGHT, "Fractol by ssabbah");
-	p.image_ptr = mlx_new_image(p.mlx, WIDTH, HEIGHT);
-	p.image = (int *)mlx_get_data_addr(p.image_ptr,&p.bpp, &p.size_l, &p.endian);
 	init(&p);
 	if (ac == 2)
 	{
