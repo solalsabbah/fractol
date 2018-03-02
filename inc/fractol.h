@@ -6,7 +6,7 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 14:44:00 by ssabbah           #+#    #+#             */
-/*   Updated: 2018/02/27 17:08:35 by ssabbah          ###   ########.fr       */
+/*   Updated: 2018/03/02 18:42:33 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@
 # define ESC 53
 # define DEL 51
 
-
+typedef struct	s_fract
+{
+}				t_fract;
 
 typedef struct	s_param
 {
@@ -48,7 +50,10 @@ typedef struct	s_param
 	int			bpp;
 	int			size_l;
 	int			endian;
-	int			map;	
+	int			map;
+	int			zoomi;
+	int			zoomj;
+	int			init;
 	double		zoomx;
 	double		zoomy;
 
@@ -57,6 +62,11 @@ typedef struct	s_param
 	void		*help_xpm;
 	void		*color_xpm;
 	void		*school_xpm;
+
+	double		minRe;
+	double		maxRe;
+	double		minIm;
+	double		maxIm;
 }			t_param;
 
 int				ft_printf(char *format, ...);

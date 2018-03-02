@@ -6,7 +6,7 @@
 /*   By: ssabbah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 14:42:10 by ssabbah           #+#    #+#             */
-/*   Updated: 2018/02/27 17:37:45 by ssabbah          ###   ########.fr       */
+/*   Updated: 2018/03/02 19:05:04 by ssabbah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ int		choose_fractal(char *str, t_param *p)
 
 void	init(t_param *p)
 {
-	p->zoomx = 0;
+	p->zoomx = 1;
+	p->zoomy = 1;
+	p->zoomi = WIDTH / 2;
+	p->zoomj = HEIGHT / 2;
+	p->init = 0;
 }
 
 int		main(int ac, char **av)
